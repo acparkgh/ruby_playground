@@ -5,5 +5,16 @@ require_relative './instructor.rb'
 puts "hello world!"
 
 bayside = School.new("Bayside High")
+flatiron = School.new("Flatiron School")
+
+shannon = Instructor.new("Shannon Nabors")
+flatiron.add_instructor(shannon)
+
+flatiron.instructors
 
 binding.pry
+
+puts shannon.school == flatiron
+
+
+

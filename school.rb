@@ -1,7 +1,7 @@
 class School
 
-  attr_accessor 
-  attr_reader :school
+  attr_accessor :name, :instructors
+  attr_reader 
 
   @@all = []
 
@@ -10,24 +10,18 @@ class School
     @@all << self
   end
 
-  def join_school(school)
-    @school = school
-  end
-
-  def name(name)
-    @name = name
-  end
-
-  def name
-    @name
-  end
-
   def self.all
     @@all
   end
    
-  # def school
-  #   return @school
-  # end
+  def add_instructor(instructor)
+    instructor.join_school(self)
+  end
+
+  def instructors
+    Instructor.all.select do |instructor|
+      instructor.school == self
+    end
+  end
 
 end
