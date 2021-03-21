@@ -12,9 +12,9 @@ flatiron.add_instructor(shannon)
 
 flatiron.instructors
 
-binding.pry
 
 puts shannon.school == flatiron
+binding.pry
 
 
 

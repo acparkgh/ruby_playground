@@ -2,6 +2,7 @@ class Instructor
 
   attr_accessor :name
   attr_reader :school
+  attr_writer :school
 
   @@all = []
 
@@ -14,10 +15,9 @@ class Instructor
     return @@all
   end
 
-  def join_school(school)
-    
-    @school = school
-  end
+  # def join_school(school)
+  #     @school = school
+  # end
 
   def school_name
     self.school.name

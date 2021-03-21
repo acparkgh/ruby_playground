@@ -14,8 +14,13 @@ class School
     @@all
   end
    
+  # def add_instructor(instructor)
+  #   instructor.join_school(self)
+  # end
+
   def add_instructor(instructor)
-    instructor.join_school(self)
+    # binding.pry
+    instructor.school= (self)
   end
 
   def instructors
