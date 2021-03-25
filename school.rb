@@ -1,6 +1,6 @@
 class School
 
-  attr_accessor :name, :instructors
+  attr_accessor(:name, :instructors)
   attr_reader 
 
   @@all = []
@@ -26,6 +26,13 @@ class School
   def instructors
     Instructor.all.select do |instructor|
       instructor.school == self
+    end
+  end
+
+  def self.find_by_name(school_name)
+    School.all.find do |school|
+      binding.pry
+      school.name = school_name
     end
   end
 
