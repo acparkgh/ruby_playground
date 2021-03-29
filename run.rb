@@ -1,22 +1,19 @@
 require 'pry'
 require_relative './school.rb'
 require_relative './instructor.rb'
-
-# puts "hello world!"
+require_relative './school_instructor.rb'
 
 bayside = School.new("Bayside High")
 flatiron = School.new("Flatiron School")
 
 shannon = Instructor.new("Shannon Nabors")
-flatiron.add_instructor(shannon)
 andrew = Instructor.new("Andrew Park")
-andrew.school= (bayside)
+andrew.join_school(flatiron)
 
-flatiron.instructors
+bob = Instructor.new("Bob")
+bob.join_school(bayside)
+flatiron.add_instructor(shannon)
 
-
-puts shannon.school == flatiron
-
-School.find_by_name("Bayside High") == bayside
+shannon.schools
 
 binding.pry

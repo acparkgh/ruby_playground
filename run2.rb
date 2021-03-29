@@ -3,20 +3,19 @@ Bundler.require
 
 class Pet
 
-attr_accessor(:age, :gender, :name, :species)
+attr_accessor :age, :gender, :name, :species
    
   @@all = []
   
   def initialize(age, gender, name, species)
     @age = age
-    @gender = gender 
-    @name = name 
+    @gender = [gender,  @name = name] 
     @species = species
     @@all << self
   end
   
   def self.all
-    @@all
+    @@all  #return all
   end
 
 end

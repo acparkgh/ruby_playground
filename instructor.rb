@@ -1,8 +1,8 @@
+require 'pry'
+
 class Instructor
 
-  attr_accessor :name
-  attr_reader :school
-  attr_writer :school
+  attr_reader :name
 
   @@all = []
 
@@ -15,13 +15,23 @@ class Instructor
     return @@all
   end
 
-  # def join_school(school)
-  #     @school = school
-  # end
-
-  def school_name
-    self.school.name
+  def join_school(school)
+    SchoolInstructor.add_school_instructor(school, self)    
   end
+
+  def self.new_instructor(instructor, school)
+    new_instructor = Instructor.new(instructor)
+    new_instructor.join_school(new_school)
+  end
+
+  def schools
+    SchoolInstructor.all.select do |si|
+      si.instructor == self
+    end.collect do |si|
+      si.school.name
+    end
+  end
+
   
 
 end
